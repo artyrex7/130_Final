@@ -1,10 +1,14 @@
+/**
+* Followed the source's implementation
+* @source: http://www.zedwood.com/article/cpp-sha256-function
+*/
 #include <iostream>
 #include <string>
 #include <fstream>
 #include <cstring>
 #include <ctime>
 #include <chrono>
-using namespace std::chrono;
+//using namespace std::chrono;
 
 const static int REASONABLE_LENGTH = 256;
 
@@ -164,9 +168,25 @@ std::string sha256(std::string input){
 }
 
 int main(){
+  /**
+  *Used for the executable that the python program expects
+  */
   std::string input, output;
   getline(std::cin,input);
   output = sha256(input);
   std::cout<<output;
+  /**
+  *For timing analysis of different length strings.
+  *plotted in spreadsheet
+  */
+  //std::string input, output;
+  //while(1){//ctrl-c to exit program
+  //getline(std::cin,input);//or while(std::cin>>input);
+  //auto start = high_resolution_clock::now();
+  //output = sha256(input);
+  //auto stop = high_resolution_clock::now();
+  //auto duration = duration_cast<microseconds>(stop-start);
+  //std::cout<<duration<<" "<<input.length<<"\n";
+  //}
   return 0;
 }
