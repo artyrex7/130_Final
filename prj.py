@@ -1,6 +1,13 @@
+'''
+this program will prompt user to enter username and password, 
+then will run sha256 encryption to confirm that the password is correct
+
+@Author: Arturo Reyes
+'''
 import subprocess
 
 users = dict()
+
 with open('users','r') as file:
     for i in file.readlines():
         users[i.split()[0]] = i.split()[1]
