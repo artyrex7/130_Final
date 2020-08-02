@@ -1,5 +1,12 @@
 /**
-* Followed the source's implementation
+* Used for the executable that the python program expects...
+* 
+* to compile: g++ std=c++11 sha256.cpp -o sha256.exe
+**/
+
+
+/**
+* Followed the source's implementation of SHA256
 * @source: http://www.zedwood.com/article/cpp-sha256-function
 */
 #include <iostream>
@@ -168,25 +175,10 @@ std::string sha256(std::string input){
 }
 
 int main(){
-  /**
-  *Used for the executable that the python program expects
-  */
   std::string input, output;
   getline(std::cin,input);
   output = sha256(input);
   std::cout<<output;
-  /**
-  *For timing analysis of different length strings.
-  *plotted in spreadsheet
-  */
-  //std::string input, output;
-  //while(1){//ctrl-c to exit program
-  //getline(std::cin,input);//or while(std::cin>>input);
-  //auto start = high_resolution_clock::now();
-  //output = sha256(input);
-  //auto stop = high_resolution_clock::now();
-  //auto duration = duration_cast<microseconds>(stop-start);
-  //std::cout<<duration<<" "<<input.length<<"\n";
-  //}
+  
   return 0;
 }
